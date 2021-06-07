@@ -32,6 +32,20 @@ CREATE TABLE Movie(
 DESCRIBE Movie;
 SELECT * FROM Movie;
 
+-- create a table shows
+CREATE TABLE Show (
+  Show_ID INTEGER PRIMARY KEY,
+  Movie_ID INTEGER not null,
+  Duration INTEGER NOT NULL,
+  Free_ticket INTEGER NOT NULL,
+  Start_Time timestamp NOT NULL,
+  Ticket_Price float NOT NULL,
+  FOREIGN KEY (Movie_ID)REFERENCES Movie(Movie_ID)
+);
+DESCRIBE Show;
+SELECT * FROM Show;
+
+
 --create a table Auditoriums
 CREATE TABLE Auditorium(
     Auditorium_ID INTEGER,
