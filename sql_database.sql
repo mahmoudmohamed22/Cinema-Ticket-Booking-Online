@@ -32,6 +32,19 @@ CREATE TABLE Movie(
 DESCRIBE Movie;
 SELECT * FROM Movie;
 
+--create a table Auditoriums
+CREATE TABLE Auditorium(
+    Auditorium_ID INTEGER,
+    Cinema_ID INTEGER not null,
+    No_Seats INTEGER NOT NULL,
+    Auditorium_No INTEGER NOT NULL,
+    FOREIGN KEY (Cinema_ID) REFERENCES Cinema(Cinema_ID),
+    primary key (Auditorium_ID)
+);
+DESCRIBE Auditorium;
+SELECT * FROM Auditorium;
+
+
 -- create a table AuditoriumStatus
 create table Auditorium_Status(
 Auditorium_busy varchar(20),
