@@ -83,3 +83,17 @@ PRIMARY KEY (Show_ID,Auditorium_ID)
 );
 DESCRIBE Auditorium_Status;
 SELECT * FROM Auditorium_Status;
+
+-- create a table customers
+CREATE TABLE Customer (
+    Customer_ID INTEGER,
+    Customer_Name varchar(50) NOT NULL ,
+    Customer_Email VARCHAR(40) UNIQUE NOT NULL,
+    Customer_Password VARCHAR(40) UNIQUE NOT NULL,
+    Customer_Phone VARCHAR(40) UNIQUE NOT NULL,
+    Customer_Address VARCHAR(40),
+    PRIMARY KEY (Customer_ID)
+);
+DESCRIBE Customer;
+SELECT * FROM Customer;
+
