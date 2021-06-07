@@ -44,6 +44,19 @@ CREATE TABLE Auditorium(
 DESCRIBE Auditorium;
 SELECT * FROM Auditorium;
 
+-- create a table Seats
+CREATE TABLE Seat(
+    Seat_ID INTEGER,
+    Auditorium_ID INTEGER,    
+    Status VARCHAR(4),
+    Row_No INTEGER,
+    Seat_No INTEGER,
+    FOREIGN KEY (Auditorium_ID)REFERENCES Auditorium(Auditorium_ID),
+    PRIMARY KEY (Seat_ID)
+);
+DESCRIBE Seat;
+SELECT * FROM Seat;
+
 
 -- create a table AuditoriumStatus
 create table Auditorium_Status(
