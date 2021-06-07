@@ -97,3 +97,16 @@ CREATE TABLE Customer (
 DESCRIBE Customer;
 SELECT * FROM Customer;
 
+-- create a table Bookings 
+CREATE TABLE Booking (
+    Booking_ID INTEGER,
+    Customer_ID INTEGER,
+    Show_ID INTEGER,
+    Seat_ID INTEGER ,
+    FOREIGN KEY (Show_ID) REFERENCES Show(Show_ID),
+    FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
+    FOREIGN KEY (Seat_ID) REFERENCES Seat(Seat_ID),
+    PRIMARY KEY (Booking_ID)
+);
+DESCRIBE Booking;
+SELECT * FROM Booking;
