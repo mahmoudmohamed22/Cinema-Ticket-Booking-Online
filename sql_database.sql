@@ -1,21 +1,45 @@
 create DataBase CinemaTicketBooking;
 
-create table MOIVE (
-    Movie_ID integer not null,
-    Name varchar(20)  not null,
+--create a table Cinemas
+create table Cinema
+(
+  Cinema_ID INTEGER not null,
+  Location varchar(20) not null,
+  No_Hall INTEGER not null,
+  Phone varchar2(20) not null ,
+  constraint Cinema_location unique (Location),
+  constraint Cinema_Phone unique (Phone),
+  constraint Cinema_ID primary key (Cinema_ID)
+);
+DESCRIBE Cinema;
+SELECT * FROM Cinema;
+
+
+-- create a table Movies
+CREATE TABLE Movie(
+    Movie_ID INTEGER not null,
+    Movie_Name varchar(20)  not null,
     Rate decimal,
-    ReleaseDate date ,
-    Duration datetime,
-    Type char not null ,
+    ReleaseDate date,
+    Duration INTEGER not null,
+    Type varchar(20) not null,
     Country varchar(20),
-    Language char not null,
-    Translated boolean ,
-    Status char not null,
-
-     PRIMARY KEY (Movie_ID)
+    Language varchar(20) not null,
+    Translated varchar(20) ,
+    Status varchar(20) not null,
+    PRIMARY KEY (Movie_ID)
 );
+DESCRIBE Movie;
+SELECT * FROM Movie;
 
-create table AUDITORIUM_STATUS (
-Auditorium_ID integer ,FOREIGN KEY (Auditorium_ID) REFERENCES AUDITORIUM(Auditorium_ID),
-Show_ID integer ,FOREIGN KEY (Show_ID) REFERENCES SHOW(Show_ID),
+-- create a table AuditoriumStatus
+create table Auditorium_Status(
+Auditorium_busy varchar(20),
+Show_ID INTEGER,
+Auditorium_ID INTEGER ,
+FOREIGN KEY (Auditorium_ID) REFERENCES Auditorium(Auditorium_ID),
+FOREIGN KEY (Show_ID) REFERENCES Show(Show_ID),
+PRIMARY KEY (Show_ID,Auditorium_ID)
 );
+DESCRIBE Auditorium_Status;
+SELECT * FROM Auditorium_Status;
